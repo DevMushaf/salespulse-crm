@@ -43,6 +43,13 @@ SalesPulse CRM follows a **client-server architecture** with a clear separation 
 - **Lucide React** — Icon library
 - **React Hot Toast** — Toast notifications
 
+### Design System
+- **Theme:** Light background (`#f0f2f8`) with white cards and a deep navy sidebar (`#141c2e`)
+- **Heading font:** Plus Jakarta Sans (Google Fonts)
+- **Body font:** DM Sans (Google Fonts)
+- **Accent color:** Indigo `#6366f1` for primary actions, active states, focus rings
+- See `docs/STYLEGUIDE.md` for the full token reference and component patterns
+
 ### Component Structure
 ```
 src/
