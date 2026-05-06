@@ -9,14 +9,14 @@ const STATUS_COLORS = { New: '#6366f1', Contacted: '#3b82f6', Qualified: '#14b8a
 const SOURCE_COLORS = ['#6366f1', '#ec4899', '#14b8a6', '#f59e0b', '#3b82f6', '#8b5cf6'];
 
 function fmt(val) {
-  if (val >= 1e6) return `$${(val/1e6).toFixed(1)}M`;
-  if (val >= 1e3) return `$${(val/1e3).toFixed(0)}K`;
+  if (val >= 1e6) return `$${(val / 1e6).toFixed(1)}M`;
+  if (val >= 1e3) return `$${(val / 1e3).toFixed(0)}K`;
   return `$${val}`;
 }
 
 function timeAgo(d) {
-  const ms = Date.now() - new Date(d).getTime();
-  const m = Math.floor(ms/6e4), h = Math.floor(ms/36e5), dy = Math.floor(ms/864e5);
+  const ms = Date.now() - new Date(d.endsWith('Z') ? d : d + 'Z').getTime();
+  const m = Math.floor(ms / 6e4), h = Math.floor(ms / 36e5), dy = Math.floor(ms / 864e5);
   if (m < 1) return 'Just now';
   if (m < 60) return `${m}m ago`;
   if (h < 24) return `${h}h ago`;
@@ -60,7 +60,7 @@ export default function DashboardPage() {
       </div>
       <div className="stats-grid">
         {stats.map(({ label, value, icon: Icon, color, sub }) => (
-          <div className="stat-card" key={label} id={`stat-${label.toLowerCase().replace(/\s+/g,'-')}`}>
+          <div className="stat-card" key={label} id={`stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
             <div className="stat-icon" style={{ backgroundColor: `${color}15`, color }}><Icon size={22} /></div>
             <div className="stat-content">
               <p className="stat-value">{value}</p>
@@ -134,7 +134,7 @@ export default function DashboardPage() {
             <Link to={`/leads/${lead.id}`} className="recent-lead-item" key={lead.id}>
               <div><p className="lead-title">{lead.name}</p><p className="lead-company">{lead.company}</p></div>
               <div className="recent-lead-right">
-                <span className={`status-badge status-${lead.status.toLowerCase().replace(/\s+/g,'-')}`}>{lead.status}</span>
+                <span className={`status-badge status-${lead.status.toLowerCase().replace(/\s+/g, '-')}`}>{lead.status}</span>
                 <span className="deal-val">{fmt(lead.deal_value)}</span>
               </div>
             </Link>
