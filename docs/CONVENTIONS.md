@@ -47,6 +47,14 @@ export default function PageName() {
 - Error handling in individual components with `try/catch`
 - Toast notifications for user feedback
 
+### Styling Conventions
+- All styles live in `index.css` (base/layout/login/sidebar) and `App.css` (pages/components)
+- Use CSS custom properties (`var(--token)`) — never hardcode colors or shadows inline
+- **Fonts:** `Plus Jakarta Sans` for headings (`h1–h5`), `DM Sans` for body/inputs/buttons. Both loaded via Google Fonts in `index.html`. Do not use `Inter` or system fonts.
+- **Theme:** Light background (`#f0f2f8`) with white cards and a navy sidebar (`#141c2e`). Do not introduce dark backgrounds in the main content area.
+- New status badges must follow the pattern in `App.css`: colored bg + matching border + dark text from the same color family (see STYLEGUIDE.md)
+- Focus rings use `0 0 0 3px var(--accent-glow)` — apply consistently on all interactive inputs
+
 ## Backend Conventions
 
 ### File Naming
