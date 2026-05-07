@@ -106,4 +106,9 @@ function seed() {
   console.log('   Password: password123');
 }
 
-seed();
+if (require.main === module) {
+  seed();
+}
+
+module.exports = seed;
+

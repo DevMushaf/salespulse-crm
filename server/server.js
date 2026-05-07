@@ -8,6 +8,17 @@ const leadRoutes = require('./routes/leads');
 const dashboardRoutes = require('./routes/dashboard');
 const userRoutes = require('./routes/users');
 
+const db = require('./config/database');
+const seed = require('./config/seed');
+
+if (process.env.SEED_ON_EMPTY === 'true') {
+  const userCount = db.prepare('SELECT COUNT(*) as count FROM users').get().count;
+
+  if (userCount === 0) {
+    seed();
+  }
+}
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
