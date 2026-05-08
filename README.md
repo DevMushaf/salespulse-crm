@@ -2,8 +2,6 @@
 
 A full-stack CRM Lead Management System built for sales teams to manage leads, track pipeline progress, add notes, and view real-time dashboard analytics.
 
-![Dashboard Preview](docs/screenshots/dashboard.png)
-
 ---
 
 ## 📋 Project Overview
@@ -213,7 +211,6 @@ crm-app/
 4. **No role-based access control** — All logged-in users have full access
 5. **Single-server SQLite** — Not suitable for production at scale (would migrate to PostgreSQL)
 6. **No automated tests** — Manual testing only (would add Jest + React Testing Library)
-7. **No deployment** — Runs locally only
 
 ---
 
@@ -234,7 +231,6 @@ Building this project deepened my understanding of full-stack architecture — p
 - Build email template integration for follow-ups
 - Add drag-and-drop Kanban board view
 - Implement proper RBAC (role-based access control)
-- Deploy to a cloud platform (Vercel + Railway)
 
 ### Tools and resources used
 - React and Express documentation
@@ -249,6 +245,10 @@ Building this project deepened my understanding of full-stack architecture — p
 Link to demo video — 
 
 ---
+
+## Vercel link
+
+Link — https://salespulse-crm-one.vercel.app/
 
 ## 📄 License
 
